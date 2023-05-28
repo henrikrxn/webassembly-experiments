@@ -4,5 +4,6 @@
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
     <OutputType>Exe</OutputType>
     <PublishTrimmed>true</PublishTrimmed>
+    <WasmSingleFileBundle Condition="'$(WASI_SDK_PATH)' == ''">true</WasmSingleFileBundle>
   </PropertyGroup>
 </Project>
