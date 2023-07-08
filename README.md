@@ -9,5 +9,7 @@ So far it contains:
   Currently only writes to console and should be expanded to do the same as the `go` sample, i.e. use functionality only available in WASI.
 * `samples\wasi\go`
   Hello World in go. Copied from [meteatamel/wasm-basics](https://github.com/meteatamel/wasm-basics/tree/main/samples/go-wasm)
+* `dotnet-calling-wat`
+  Using [bytecodealliance/wasmtime-dotnet](https://github.com/bytecodealliance/wasmtime-dotnet) to call some simple wat code
 
 
