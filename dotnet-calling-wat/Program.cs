@@ -14,4 +14,17 @@ if (add is null)
     Environment.Exit(1);
 }
 
-Console.WriteLine($"add(27, 6) = {add(27, 6)}");
+var x = 31;
+var y = 11;
+
+Console.WriteLine($"add({x}, {y}) = {add(x, y)}, should be {x+y}");
+
+var subtract = instance.GetFunction<int, int, int>("subtract");
+
+if (subtract is null)
+{
+    Console.WriteLine("Failed to load function subtract");
+    Environment.Exit(1);
+}
+
+Console.WriteLine($"subtract({x}, {y}) = {subtract(x, y)}, should be {x-y}");
