@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\samples\wasm\wat\calculator\calculator.wat" Link="calculator.wat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="wasmtime" Version="11.0.1" />
   </ItemGroup>
 
