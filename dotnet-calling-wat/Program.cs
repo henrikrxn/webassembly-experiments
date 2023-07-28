@@ -1,7 +1,11 @@
 ﻿using Wasmtime;
 
+var executingAssemblyLocation = System.Reflection.Assembly.GetExecutingAssembly().Location ?? throw new NullReferenceException("Executing assembly should have a location");
+var executionDirectory = Path.GetDirectoryName(executingAssemblyLocation) ?? throw new NullReferenceException("Execution directory could not be determined");
+var pathToWatFile = Path.Combine(executionDirectory, "calculator.wat") ?? throw new NullReferenceException("Path to wat file could not be determined");
+
 using var engine = new Engine();
-using var module = Module.FromTextFile(engine, @"..\samples\wasm\wat\calculator\calculator.wat");
+using var module = Module.FromTextFile(engine, pathToWatFile);
 using var store = new Store(engine);
 
 var instance = new Instance(store, module, Array.Empty<object>());
@@ -27,4 +31,4 @@ if (subtract is null)
     Environment.Exit(1);
 }
 
-Console.WriteLine($"subtract({x}, {y}) = {subtract(x, y)}, should be {x-y}");
+ Console.WriteLine($"subtract({x}, {y}) = {subtract(x, y)}, should be {x-y}");
