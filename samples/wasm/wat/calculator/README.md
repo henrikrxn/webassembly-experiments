@@ -16,6 +16,13 @@ PS> wat2wasm calculator.wat -o wat-calculator.wasm
 ## Executing using wasmtime
 
 ```powershell
+PS> wasmtime .\calculator.wat --invoke add 31 11
+PS> wasmtime .\calculator.wat --invoke subtract 31 11
+```
+
+or
+
+```powershell
 PS> wasmtime .\wat-calculator.wasm --invoke add 31 11
 PS> wasmtime .\wat-calculator.wasm --invoke subtract 31 11
 ```
