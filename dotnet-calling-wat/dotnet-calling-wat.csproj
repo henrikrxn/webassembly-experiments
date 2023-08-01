@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\samples\wasm\wat\calculator\calculator-in-wat.wasm" Link="calculator-in-wat.wasm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="..\samples\wasm\wat\calculator\calculator.wat" Link="calculator.wat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
