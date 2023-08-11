@@ -1,0 +1,11 @@
+package henrikrxn:experiments
+
+world reactor {
+    export calculator
+}
+
+// This is an attempte at describing the "calculator" I use throughout this repository
+interface calculator {
+    add: func(x: u32, y: u32) -> u32
+    subtract: func(x: u32, y: u32) -> u32
+}
