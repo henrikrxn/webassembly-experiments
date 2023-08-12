@@ -5,26 +5,29 @@
         <title>WASM calculator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="calculator.css" />
     </head>
 
     <body>
-        <label>x</label>
-        <input type="number" value="29" id="x"></input>
-        <label>y</label>
-        <input type="number" value="13" id="y"></input>
-
-        <br>
-        <br>
-        <button id="addButton" disabled onclick="updateResult('x + y = ', wasmAdd(getX(), getY()))">Add</button>
-        <button id="subtractButton" disabled onclick="updateResult('x - y = ', wasmSubtract(getX(), getY()))">Subtract</button>
-
-        <br>
-        <br>
-        <label hidden="true" id="resultLabel">Result: </label><span id="result"></span>
+        <div class="container">
+            <div id="inputs">
+                <label>x</label>
+                <input type="number" value="29" id="x"></input>
+                <label>y</label>
+                <input type="number" value="13" id="y"></input>
+            </div>
+            <div id="operations">
+                <button id="addButton" disabled onclick="updateResult('x + y = ', wasmAdd(getX(), getY()))">Add</button>
+                <button id="subtractButton" disabled onclick="updateResult('x - y = ', wasmSubtract(getX(), getY()))">Subtract</button>
+            </div>
+            <div id="resultRow">
+                <label hidden="true" id="resultLabel">Result: </label><span id="result"></span>
+            </div>
+        </div>
     </body>
 
     <script>
-        let module;
         let instanse;
         let wasmAdd;
         let wasmSubtract;
@@ -42,15 +45,18 @@
             return Number(document.getElementById('y').value)
         }
 
-        WebAssembly.instantiateStreaming(fetch("calculator-in-wat.wasm")).then(
-            (obj) => {
-                document.getElementById('addButton').disabled = false
-                document.getElementById('subtractButton').disabled = false
-                wasmAdd = obj.instance.exports.add
-                wasmSubtract = obj.instance.exports.subtract
-                console.log('After assigning WASM functions')
-            }
-        );
+        WebAssembly.instantiateStreaming(fetch("calculator-in-wat.wasm"))
+            .then((obj) => {
+                    document.getElementById('addButton').disabled = false
+                    document.getElementById('subtractButton').disabled = false
+                    instance = obj.instance
+                    wasmAdd = instance.exports.add
+                    wasmSubtract = instance.exports.subtract
+                    console.log('After assigning WASM functions')
+                }
+            ).catch(
+                reason => alert(`Loading WASM failed: ${reason}`)
+            );
     </script>
 
 </html>
