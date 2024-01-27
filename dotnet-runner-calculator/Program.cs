@@ -1,5 +1,12 @@
 ﻿using Wasmtime;
 
+// TODO Turn this into a WASI calculator tester
+
+// 0) Rename folder and project -> dotnet-wasi-calculator-runner
+// 1) Move this to the wasi folder
+// 2) Add script to copy the different WASI (wasm) files to output folder
+// 3) Maybe use tree in Spectre.Console to be able to pick the WASI (wasm) file to run
+// 4) Share 3) with the wasm-runner
 
 var executingAssemblyLocation = System.Reflection.Assembly.GetExecutingAssembly().Location ?? throw new NullReferenceException("Executing assembly should have a location");
 var executionDirectory = Path.GetDirectoryName(executingAssemblyLocation) ?? throw new NullReferenceException("Execution directory could not be determined");
