@@ -8,7 +8,7 @@ using var engine = new Engine();
 using var module = Module.FromTextFile(engine, pathToWatFile);
 using var store = new Store(engine);
 
-var instance = new Instance(store, module, Array.Empty<object>());
+var instance = new Instance(store, module, []);
 
 var add = instance.GetFunction<int, int, int>("add");
 
