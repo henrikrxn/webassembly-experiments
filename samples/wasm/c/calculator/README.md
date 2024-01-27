@@ -6,7 +6,7 @@ See `..\wit` folder for the IDL.
 
 ## Pre-requisites
 
-* emscripten
+* emscripten. Last used version was 3.1.52.
 
 ## How to set-up emscripten in a prompt
 
@@ -17,6 +17,16 @@ prompt you open before `emcc` etc. can be used.
 PS> cd <emsdk root directory>
 PS> .\emsdk_env.ps1
 ```
+
+## After syncing my emsdk fork
+
+```powershell
+PS> cd <emsdk root directory>
+PS> .\emsdk_env.ps1
+PS> emsdk install latest
+PS> emsdk activate latest
+```
+
 
 ## How to build
 
@@ -47,15 +57,15 @@ emcc .\calculator.c --no-entry -v -O3 -o calculator-in-c.wasm -s STANDALONE_WASM
 See https://v8.dev/blog/emscripten-standalone-wasm
 
 ```powershell
-emcc .\calculator.c --no-entry -v -Oz -o calculator-in-c.wasm -sSTANDALONE_WASM=1 -sFILESYSTEM=0 -sSTRICT -sSUPPORT_ERRNO=0 -sVERBOSE=1
+emcc .\calculator.c --no-entry -v -Oz -o calculator-in-c.wasm -sSTANDALONE_WASM=1 -sFILESYSTEM=0 -sSTRICT -sVERBOSE=1
 ```
 
 `--no-entry` to tell the compiler that there is no main (shouldn't that be obvious from -s STANDALONE_WASM=1 ?)
-`-s SUPPORT_ERRNO=0` to get rid of the unneeded export `__errno_location`
+`--closure 1` reduces size of support JavaScript code, see https://emscripten.org/docs/optimizing/Optimizing-Code.html
 `-s STANDALONE_WASM=1` for running outside of browser, see https://v8.dev/blog/emscripten-standalone-wasm
 `-s FILESYSTEM=0` for disabling bundling of filesystem support code, see https://emscripten.org/docs/optimizing/Optimizing-Code.html
 `-s STRICT` ??
 `-s SUPPORT_LONGJMP=0` ??
 `-s DECLARE_ASM_MODULE_EXPORTS=0` ??
 `-s VERBOSE=1` ??
-`--closure 1` reduces size of support JavaScript code, see https://emscripten.org/docs/optimizing/Optimizing-Code.html
+`-s EXPORT_KEEPALIVE` ??
