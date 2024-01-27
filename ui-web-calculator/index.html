@@ -45,7 +45,7 @@
             return Number(document.getElementById('y').value)
         }
 
-        WebAssembly.instantiateStreaming(fetch("calculator-in-wat.wasm"))
+        WebAssembly.instantiateStreaming(fetch("calculator.wasm"))
             .then((obj) => {
                     document.getElementById('addButton').disabled = false
                     document.getElementById('subtractButton').disabled = false
