@@ -3,6 +3,6 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="wasmtime" Version="19.0.0" />
+    <PackageVersion Include="wasmtime" Version="21.0.1" />
   </ItemGroup>
 </Project>
