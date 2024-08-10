@@ -1,0 +1,7 @@
+﻿  <Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+    <PropertyGroup>
+      <TargetFramework>net9.0</TargetFramework>
+      <OutputType>Library</OutputType>
+      <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
+    </PropertyGroup>
+   </Project>
