@@ -2,8 +2,14 @@
 
 namespace wasi_library;
 
-public class Calculator
+public unsafe class Calculator
 {
+    [UnmanagedCallersOnly(EntryPoint = "helloWorld")]
+    public static void HelloWorld()
+    {
+        System.Console.WriteLine("Hello World!");
+    }
+
     [UnmanagedCallersOnly(EntryPoint = "add")]
     public static int Add(int x, int y)
     {
