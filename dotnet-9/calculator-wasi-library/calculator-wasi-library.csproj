@@ -7,5 +7,6 @@
       <WasmSingleFileBundle Condition="'$(WASI_SDK_PATH)' != ''">true</WasmSingleFileBundle>
       <!-- Need line below if using 'unsafe' keyword on class -->
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <RootNamespace>wasi-library</RootNamespace>
     </PropertyGroup>
    </Project>

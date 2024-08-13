@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace wasi_library;
+namespace CalculatorWasiLibrary;
 
 public unsafe class Calculator
 {
