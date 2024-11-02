@@ -1,5 +1,7 @@
 ## .NET WASI app
 
+Staying on .NET 8 as it seems that `wasi-experimental` will not be supported in .NET 9. See [issue on Github](https://github.com/dotnet/runtime/pull/108877)
+
 ## Build
 
 You should also be able to use the `Release` configuration, but I only tried it with `Debug`. 
@@ -24,7 +26,7 @@ Or directly start node from the AppBundle directory:
 
 ```
 cd .\bin\Debug\net8.0\wasi-wasm\AppBundle\
-wasmtime .\dotnet.wasm --dir . wasiconsole-hello-world
+wasmtime run wasiconsole-hello-world.wasm
 ```
 
 ## If you want single file WASM
