@@ -6,8 +6,6 @@
     <RootNamespace>componentize_wasi_cli</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!-- Because some projects in this repo use CPM need to opt-out-explicitly when this does not -->
-    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     <!-- WASI / WASM stuff below--> 
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
     <UseAppHost>false</UseAppHost>

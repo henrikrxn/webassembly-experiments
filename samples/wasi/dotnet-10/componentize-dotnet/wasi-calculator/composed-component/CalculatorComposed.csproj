@@ -6,8 +6,6 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <!-- Because some projects in this repo use CPM need to opt-out-explicitly when this does not -->
-    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <ItemGroup>
