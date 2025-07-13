@@ -1,0 +1,18 @@
+package example:calculator;
+
+// This is a copy of the wit file from the library-component
+// Cannot reference wit files outside of folder, so sharing is not possible
+// see   
+
+interface operations {
+    add: func(x: s32, y: s32) -> s32;
+    subtract: func(x: s32, y: s32) -> s32;
+}
+
+world computer {
+  export operations;
+}
+
+world hostapp {
+  import operations;
+}
