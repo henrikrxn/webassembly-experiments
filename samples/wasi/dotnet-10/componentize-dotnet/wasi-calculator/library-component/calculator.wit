@@ -1,0 +1,14 @@
+package example:calculator;
+
+interface operations {
+    add: func(x: s32, y: s32) -> s32;
+    subtract: func(x: s32, y: s32) -> s32;
+}
+
+world computer {
+  export operations;
+}
+
+world hostapp {
+  import operations;
+}
