@@ -6,7 +6,7 @@
     <RootNamespace>componentize_wasi_cli</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!-- WASI / WASM stuff below--> 
+    <!-- WASI / WASM stuff below -->
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
     <UseAppHost>false</UseAppHost>
     <PublishTrimmed>true</PublishTrimmed>
