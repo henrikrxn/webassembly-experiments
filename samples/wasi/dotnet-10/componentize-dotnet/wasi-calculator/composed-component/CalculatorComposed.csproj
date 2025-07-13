@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- THIS IS NOT REALLY A .NET PROJECT -->
+  <!-- It's just a csproj that can be used to invoke the wasm tooling to compose the runnable component -->
+  <!-- and express a dependency on the two implementation components. -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <!-- Because some projects in this repo use CPM need to opt-out-explicitly when this does not -->
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\library-component\library-component.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\consumer-component\consumer.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <Target Name="ComposeWasmComponent" AfterTargets="Publish">
+    <PropertyGroup>
+      <EntrypointComponent>../consumer-component/bin/$(Configuration)/$(TargetFramework)/wasi-wasm/native/consumer.wasm</EntrypointComponent>
+      <LibraryComponent>../library-component/bin/$(Configuration)/$(TargetFramework)/wasi-wasm/native/library-component.wasm</LibraryComponent>
+      <WacExe>wac-cli-0.7.0-x86_64-pc-windows-gnu.exe</WacExe>
+    </PropertyGroup>
+
+    <MakeDir Directories="dist" />
+    <Exec Command="$(WacExe) plug $(EntrypointComponent) --plug $(LibraryComponent) -o dist/calculator.wasm" />
+  </Target>
+
+</Project>
