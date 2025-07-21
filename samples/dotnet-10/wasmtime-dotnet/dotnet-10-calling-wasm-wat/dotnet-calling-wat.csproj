@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\wasm\wat\calculator\calculator.wat" Link="calculator.wat">
+    <None Include="..\..\..\wasm\wat\calculator\calculator.wat" Link="calculator.wat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
