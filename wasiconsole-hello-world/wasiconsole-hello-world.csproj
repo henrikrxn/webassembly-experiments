@@ -1,9 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
     <OutputType>Exe</OutputType>
     <PublishTrimmed>true</PublishTrimmed>
+    <WASI_SDK_PATH Condition="'$(WASI_SDK_PATH)' == ''">E:\WASI-SDK\wasi-sdk-27.0-x86_64-windows</WASI_SDK_PATH>
     <WasmSingleFileBundle Condition="'$(WASI_SDK_PATH)' != ''">true</WasmSingleFileBundle>
   </PropertyGroup>
+  <Target Name="PrintWasiSdkPath">
+    <!-- When using dotnet CLI remember to call with -verbosity:detailed
+         because otherwise message is not shown. WTF!
+    -->
+    <Message Importance="high" Text="WASI_SDK_PATH : $(WASI_SDK_PATH)" />
+  </Target>
 </Project>
