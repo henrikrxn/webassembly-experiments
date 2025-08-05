@@ -4,6 +4,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="BytecodeAlliance.Componentize.DotNet.Wasm.SDK" Version="0.4.0-preview00007" />
-    <PackageVersion Include="wasmtime" Version="22.0.0" />
+    <PackageVersion Include="wasmtime" Version="34.0.2" />
   </ItemGroup>
 </Project>
