@@ -29,7 +29,7 @@ Or directly start `wasmtime` from the AppBundle directory:
 
 ```
 cd bin/$(Configuration)/net10.0/wasi-wasm/AppBundle
-wasmtime run --dir .  -- dotnet.wasm <name_of_the_main_assembly>
+wasmtime run --wasi http --dir . dotnet.wasm <name_of_the_main_assembly>
 ```
 
 ### for single file bundle
