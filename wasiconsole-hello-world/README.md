@@ -6,7 +6,7 @@ Staying on .NET 8 as it seems that `wasi-experimental` will not be supported in 
 
 * .NET 10.0.200 (10.0.4)
 * Wasmtime 42.0.1
-* WASI SDK v30
+* WASI SDK v32
 
 ## Build
 
