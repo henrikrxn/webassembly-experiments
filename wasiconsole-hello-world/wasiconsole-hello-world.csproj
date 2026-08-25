@@ -4,11 +4,14 @@
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
     <OutputType>Exe</OutputType>
     <PublishTrimmed>true</PublishTrimmed>
-    <WASI_SDK_PATH Condition="'$(WASI_SDK_PATH)' == ''">E:\WASI-SDK\wasi-sdk-32.0-x86_64-windows</WASI_SDK_PATH>
+    <WASI_SDK_PATH Condition="'$(WASI_SDK_PATH)' == ''">E:\WASI-SDK\wasi-sdk-34.0-x86_64-windows</WASI_SDK_PATH>
     <WasmSingleFileBundle Condition="'$(WASI_SDK_PATH)' != ''">true</WasmSingleFileBundle>
   </PropertyGroup>
   <Target Name="PrintWasiSdkPath">
-    <!-- When using dotnet CLI remember to call with -verbosity:detailed
+    <!-- When using dotnet CLI remember to call with
+
+         -verbosity:detailed
+
          because otherwise message is not shown. WTF!
     -->
     <Message Importance="high" Text="WASI_SDK_PATH : $(WASI_SDK_PATH)" />
