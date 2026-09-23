@@ -8,17 +8,13 @@
     <Nullable>enable</Nullable>
     <!-- WASI / WASM stuff below-->
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
-    <UseAppHost>false</UseAppHost>
-    <PublishTrimmed>true</PublishTrimmed>
-    <InvariantGlobalization>true</InvariantGlobalization>
-    <SelfContained>true</SelfContained>
     <!-- When using strings -->
     <IlcExportUnmanagedEntrypoints>true</IlcExportUnmanagedEntrypoints>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BytecodeAlliance.Componentize.DotNet.Wasm.SDK" Version="0.7.0-preview*" />
-    <PackageReference Include="runtime.win-x64.microsoft.dotnet.ilcompiler.llvm" Version="10.0.0-alpha.1.25162.1" />
+    <PackageReference Include="BytecodeAlliance.Componentize.DotNet.Wasm.SDK" Version="0.8.0-preview*" />
+    <PackageReference Include="runtime.$(NETCoreSdkPortableRuntimeIdentifier).microsoft.dotnet.ilcompiler.llvm" Version="10.0.0-rc.1.26306.1" />
   </ItemGroup>
 
   <ItemGroup>
