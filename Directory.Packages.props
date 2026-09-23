@@ -3,7 +3,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="BytecodeAlliance.Componentize.DotNet.Wasm.SDK" Version="0.4.0-preview00007" />
-    <PackageVersion Include="wasmtime" Version="44.0.0" />
+    <PackageVersion Include="BytecodeAlliance.Componentize.DotNet.Wasm.SDK" Version="0.8.0-preview00011" />
+    <PackageVersion Include="wasmtime" Version="48.0.2" />
   </ItemGroup>
 </Project>
