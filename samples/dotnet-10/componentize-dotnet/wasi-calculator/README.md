@@ -1,22 +1,32 @@
 # How to build and run
 
-For now not the best developer experience:
+Based on example from [componentize-dotnet](https://github.com/bytecodealliance/componentize-dotnet)
 
-## Composed component
+For now not the best developer experience, but build in this order:
 
-```powershell
-> dotnet build -C debug
-> cd dist
-> wasmtime run --dir . .\calculator.wasm
-```
+- Library
+- Consumer
+- Composed component
 
 ## Library component
 
 ```powershell
-> dotnet build -C debug
-> cd  bin\Debug\net10.0\wasi-wasm\publish\
+> dotnet build -c Debug
+> cd bin\Debug\net10.0\wasi-wasm\publish\
 > wasmtime run --invoke 'add(123,456)' .\library-component.wasm
+579
+> wasmtime run --invoke 'subtract(456,123)' .\library-component.wasm
+333
 ```
+
+## Composed component
+
+```powershell
+> dotnet build -c Debug
+> cd dist
+> wasmtime run --dir . .\calculator.wasm
+```
+
 
 ## Consumer component
 
