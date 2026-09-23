@@ -5,8 +5,9 @@ Based on example from [componentize-dotnet](https://github.com/bytecodealliance/
 For now not the best developer experience, but build in this order:
 
 - Library
-- Consumer
 - Composed component
+
+The consumer is built automagically when building the composed component
 
 ## Library component
 
@@ -27,7 +28,6 @@ For now not the best developer experience, but build in this order:
 > wasmtime run --dir . .\calculator.wasm
 ```
 
-
 ## Consumer component
 
-??
+Handled automatically when building the composed component.

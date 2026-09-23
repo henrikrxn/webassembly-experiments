@@ -16,8 +16,8 @@
   <Target Name="ComposeWasmComponent" AfterTargets="Publish">
     <PropertyGroup>
       <EntrypointComponent>../consumer-component/bin/$(Configuration)/$(TargetFramework)/wasi-wasm/native/consumer.wasm</EntrypointComponent>
-      <LibraryComponent>../library-component/bin/$(Configuration)/$(TargetFramework)/wasi-wasm/native/library-component.wasm</LibraryComponent>
-      <WacExe>wac-cli-0.7.0-x86_64-pc-windows-gnu.exe</WacExe>
+      <DependencyComponent>../library-component/bin/$(Configuration)/$(TargetFramework)/wasi-wasm/native/library-component.wasm</DependencyComponent>
+      <WacExe>wac-cli-0.11.0-x86_64-pc-windows-gnu.exe</WacExe>
     </PropertyGroup>
 
     <MakeDir Directories="dist" />
