@@ -3,15 +3,11 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>library_component</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>library_component</RootNamespace>
     <!-- WASI / WASM stuff below-->
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
-    <UseAppHost>false</UseAppHost>
-    <PublishTrimmed>true</PublishTrimmed>
-    <InvariantGlobalization>true</InvariantGlobalization>
-    <SelfContained>true</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>
