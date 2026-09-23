@@ -1,6 +1,6 @@
 ﻿using Wasmtime;
 
-var executingAssemblyLocation = System.Reflection.Assembly.GetExecutingAssembly().Location ?? throw new NullReferenceException("Executing assembly should have a location");
+var executingAssemblyLocation = AppContext.BaseDirectory ?? throw new NullReferenceException("Executing assembly should have a location"); // System.Reflection.Assembly.GetExecutingAssembly().Location
 var executionDirectory = Path.GetDirectoryName(executingAssemblyLocation) ?? throw new NullReferenceException("Execution directory could not be determined");
 var pathToWatFile = Path.Combine(executionDirectory, "calculator.wat") ?? throw new NullReferenceException("Path to wat file could not be determined");
 
