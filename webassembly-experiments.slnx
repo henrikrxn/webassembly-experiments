@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/samples/" />
+  <Folder Name="/samples/wasm/" />
+  <Folder Name="/samples/wasm/dotnet/">
+    <Project Path="samples/wasm/dotnet/browser/dotnet.csproj" />
+    <Project Path="samples/wasm/dotnet/node/node.csproj" />
+  </Folder>
+  <Project Path="wasiconsole-hello-world/wasiconsole-hello-world.csproj" />
+</Solution>
